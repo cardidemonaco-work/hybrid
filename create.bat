@@ -5,13 +5,13 @@ rem MUST MAKE SURE YOU ARE IN THE CORRECT DIRECTORY BEFORE RUNNING THIS
 rem Correct directory is \PROJECT\BRANCH\
 
 rem Install NPM
-rem npm install cordova
+npm install cordova
 
 rem Create Apache Cordova project
-rem C:\>cordova create hybrid com.cardidemonaco.hybrid Hybrid
+cordova create hybrid com.cardidemonaco.hybrid "Dynatrace Hybrid App"
 
 rem Add Android Platform
-rem cd hybrid
-rem cordova platform add android
+cd hybrid
+cordova platform add android
 
 rem Run the Cordova Build... switch to build.bat
