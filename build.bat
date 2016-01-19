@@ -7,6 +7,6 @@ rem C:\Projects\hybrid\trunk\hybrid\www
 rem Cordova
 rem C:\Projects\hybrid\trunk\node_modules\cordova\bin\cordova build
 
-cd "C:\Projects\hybrid\trunk\hybrid"
-C:\Projects\hybrid\trunk\node_modules\cordova\bin\cordova build android --release
-cd ../../
+cd "hybrid"
+..\node_modules\cordova\bin\cordova build android --release
+cd ..\..\
