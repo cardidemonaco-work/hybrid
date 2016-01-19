@@ -1,0 +1,2 @@
+C:\Projects\hybrid\trunk\hybrid\platforms\android\build\intermediates\classes\debug
+C:\Projects\hybrid\trunk\hybrid\platforms\android\build\intermediates\pre-dexed\debug\classes-d5ad26b4648176ccae5c59568659f8847095b825.jar
