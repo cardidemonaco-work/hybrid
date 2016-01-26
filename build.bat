@@ -10,6 +10,10 @@ rem C:\Projects\hybrid\trunk\hybrid\www
 rem Cordova
 rem C:\Projects\hybrid\trunk\node_modules\cordova\bin\cordova build
 
+rem Prerequisites
+rem node installed and on the path
+rem Android SDK installed (currently 22)
+
 rem ===
 
 rem Apache Cordova build

@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Projects\hybrid\trunk\hybrid\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jar="D:\Projects\hybrid\trunk\hybrid\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="9cf94d907ad88cb0fe103edca186e20bd62a1e02">
-        <dex dex="C:\Projects\hybrid\trunk\hybrid\platforms\android\build\intermediates\pre-dexed\debug\classes-d5ad26b4648176ccae5c59568659f8847095b825.jar" />
+        revision="23.0.2"
+        sha1="ba88c8e7e232179999ee0348d736586b666eca78">
+        <dex dex="D:\Projects\hybrid\trunk\hybrid\platforms\android\build\intermediates\pre-dexed\debug\classes-83eccd9135f326f0eb1520db892c0733e64884ad.jar" />
     </item>
 
 </items>
