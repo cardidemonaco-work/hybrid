@@ -22,4 +22,4 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
 </widget>
-<!-- From: file:/D:/Projects/hybrid/trunk/hybrid/platforms/android/res/xml/config.xml -->
+<!-- From: file:/D:/GitHub/hybrid/trunk/hybrid/platforms/android/res/xml/config.xml -->
