@@ -5,6 +5,7 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<title>Dynatrace Hybrid App! (our Mobile ADK combined with our JavaScript Agent)</title>
 	<link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
+	<link rel="import" href="menu.html">
 	
 	<!-- spaceTravel with local JS Agent and cors
 	<script type="text/javascript" src="javascript/dtagent61_gbdxjnp_8371.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=http://spacetravel.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
@@ -27,6 +28,28 @@
 <body>
 	<div id="menu">
 		<h1>TEST APP</h1>
+
+		<!-- HTML5 is supposed to support loading of resources from other places... 
+		hoping to do that with menu and the JavaScript Agent includes
+		<script>
+			function supportsImports() {
+				return 'import' in document.createElement('link');
+			}
+
+			if (supportsImports()) {
+				// Good to go!
+				var link = document.querySelector('link[rel="import"]');
+				var content = link.import;
+
+				// Grab DOM from warning.html's document.
+				var el = content.querySelector('.warning');
+
+				document.body.appendChild(el.cloneNode(true));
+			} else {
+				// Use other libraries/require systems to load files.
+			}
+		</script> -->
+		
 		<ol>
 		<!-- GET THIS WORKING: #include file="menu.txt" -->
 			<li><a href="index.html">Home Page (index.html)</a></li><br />
