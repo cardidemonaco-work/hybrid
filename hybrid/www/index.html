@@ -5,7 +5,7 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<title>Dynatrace Hybrid App! (our Mobile ADK combined with our JavaScript Agent)</title>
 	<link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
-	<link rel="import" href="menu.html">
+	<link rel="import" href="menu.txt">
 	
 	<!-- spaceTravel with local JS Agent and cors
 	<script type="text/javascript" src="javascript/dtagent61_gbdxjnp_8371.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=http://spacetravel.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
@@ -15,13 +15,18 @@
 	<script type="text/javascript" src="javascript/dtagent61_gbdxjnp_8371.js" data-dtconfig="tp=500,50,0|bandwidth=300|reportUrl=http://spacetravel.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
 	 -->
 	
+	 
+	<!-- cd-dt-0602-win with local JS Agent -->
+	<script type="text/javascript" src="javascript/dtagent625_xnpr23_1006.js" data-dtconfig="tp=500,50,0|reportUrl=http://cd-dt-0602-win.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
+	 
+	
 	<!-- int-us-support with local JS Agent and cors
 	<script type="text/javascript" src="javascript/dtagent61_gbdxjnp_8371.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=https://int-us-support.compuwareapmaas.com/dynaTraceMonitor"></script>
 	 -->
 	 
-	<!-- int-us-support with local JS Agent and no cors -->
+	<!-- int-us-support with local JS Agent and no cors 
 	<script type="text/javascript" src="javascript/dtagent61_gbdxjnp_8371.js" data-dtconfig="tp=500,50,0|bandwidth=300|reportUrl=https://int-us-support.compuwareapmaas.com/dynaTraceMonitor"></script>
-	
+	-->
 	
 </head>
 
@@ -30,7 +35,7 @@
 		<h1>TEST APP</h1>
 
 		<!-- HTML5 is supposed to support loading of resources from other places... 
-		hoping to do that with menu and the JavaScript Agent includes
+		hoping to do that with menu and the JavaScript Agent includes -->
 		<script>
 			function supportsImports() {
 				return 'import' in document.createElement('link');
@@ -42,13 +47,16 @@
 				var content = link.import;
 
 				// Grab DOM from warning.html's document.
-				var el = content.querySelector('.warning');
+				//var el = content.querySelector('.warning');
 
-				document.body.appendChild(el.cloneNode(true));
+				
+				document.getElementById("importedMenu").appendChild(content.innerHTML);
 			} else {
 				// Use other libraries/require systems to load files.
 			}
-		</script> -->
+		</script>
+		
+		<div id="importedMenu"></div>
 		
 		<ol>
 		<!-- GET THIS WORKING: #include file="menu.txt" -->
