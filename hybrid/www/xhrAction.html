@@ -5,7 +5,6 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<title>Dynatrace Hybrid App! (our Mobile ADK combined with our JavaScript Agent)</title>
 	<link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
-	<link rel="import" href="menu.txt">
 	
 	<!-- spaceTravel with local JS Agent and cors
 	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=http://spacetravel.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
@@ -15,46 +14,70 @@
 	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|bandwidth=300|reportUrl=http://spacetravel.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
 	-->
 	
-	<!-- int-us-support with local JS Agent and cors
-	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=https://int-us-support.compuwareapmaas.com/dynaTraceMonitor"></script>
-	 -->
-	 
+	<!-- int-us-support with local JS Agent and cors (alternate Web Server: http://prod-win.clients.nasa.cpwr.corp/dynaTraceMonitor) -->
+	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=http://prod-win.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
+	
 	<!-- int-us-support with local JS Agent and no cors
 	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|bandwidth=300|reportUrl=https://int-us-support.compuwareapmaas.com/dynaTraceMonitor"></script>
 	 -->
+	 
+	<!-- <script src='http://cd-dt-0602-win.clients.nasa.cpwr.corp/dtagent_bootstrap.js?app=Dynatrace+Hybrid+App'></script>
 	
-	<script src='http://cd-dt-0602-win.clients.nasa.cpwr.corp/dtagent_bootstrap.js?app=Dynatrace+Hybrid+App222'></script>
+	
+	-->
+	
+	<script type="text/javascript" src="javascript/dtagentApi.js"></script>
+	
+	<script>
+	function clickHere() {
+	
+		var xhrAction = dynaTrace.enterXhrAction("XHR stuff");
+	
+		setTimeout(function (){
+			var xhr5 = new XMLHttpRequest();
+			xhr5.onreadystatechange = function(){ 
+					if (xhr5.readyState == 4){
+						dynaTrace.leaveXhrAction(xhrAction);
+						alert("Louis gave me the right code.");
+					}
+			};
+			//xhr5.open("GET","http://cd-java.clients.nasa.cpwr.corp:8080/ajax/ajax.jsp",false);
+			//xhr5.open("GET","http://prod-win.clients.nasa.cpwr.corp/Default.aspx",false);
+			xhr5.open("GET","http://prod-win.clients.nasa.cpwr.corp/img/moon.jpg",false);
+			
+			xhr5.send(null);
+		}, 1000);
+	}
+	
+	function clickHere2() {
+	
+		//var xhrAction = dynaTrace.enterXhrAction("XHR stuff2");
+	
+		setTimeout(function (){
+			var xhr5 = new XMLHttpRequest();
+			xhr5.onreadystatechange = function(){ 
+					if (xhr5.readyState == 4){
+						//dynaTrace.leaveXhrAction(xhrAction);
+						alert("Louis gave me the right code2.");
+					}
+			};
+			//xhr5.open("GET","http://cd-java.clients.nasa.cpwr.corp:8080/ajax/ajax.jsp",false);
+			//xhr5.open("GET","http://prod-win.clients.nasa.cpwr.corp/Default.aspx",false);
+			xhr5.open("GET","http://prod-win.clients.nasa.cpwr.corp/img/moon.jpg",false);
+			
+
+			xhr5.send(null);
+		}, 1000);
+	}
+	</script>
 	
 </head>
 
 <body>
-	<div id="menu">
-		<h1>Dynatrace Hybrid App</h1>
-
-		<!-- HTML5 is supposed to support loading of resources from other places... 
-		hoping to do that with menu and the JavaScript Agent includes -->
-		<script>
-			function supportsImports() {
-				return 'import' in document.createElement('link');
-			}
-
-			if (supportsImports()) {
-				// Good to go!
-				var link = document.querySelector('link[rel="import"]');
-				var content = link.import;
-
-				// Grab DOM from warning.html's document.
-				//var el = content.querySelector('.warning');
-
-				
-				document.getElementById("importedMenu").appendChild(content.innerHTML);
-			} else {
-				// Use other libraries/require systems to load files.
-			}
-		</script>
-		
-		<div id="importedMenu"></div>
-		
+	<div id="menu_bg">
+		<div id="menu">
+			<h1>Dynatrace Hybrid App</h1>
+			
 			<ol>
 			<!-- GET THIS WORKING: #include file="menu.txt" -->
 				<li><a href="index.html">Home Page (index.html)</a></li><br />
@@ -66,13 +89,17 @@
 				<li><a href="js-bootstrap.html">JavaScript Bootstrap Agent usage (js-bootstrap.html)</a></li><br />
 				<li><a href="xhrAction.html">Create XHR Action (xhrAction.html)</a></li><br />
 			</ol>
+		</div>
 	</div>
 
 	<!-- This is where the Map actually shows (for some reason cannot be in the <form> tag) -->
 	<!-- <div id="map_canvas"> </div> -->
 	<br/><br/><br/><br/><br/><br/><br/><br/>
 	<div>
-		<iframe src="https://www.google.com/maps/d/embed?mid=zUtCsVPGhxj8.kIuwmcjaqxpI" width="100%" height="500px" ></iframe>
+	
+	<p><button onclick="clickHere();">XHR Action stuff</button><p>
+	<p><button onclick="clickHere2();">Removed XHR Action stuff</button><p>
+	
 	</div>
 </body>
 </html>

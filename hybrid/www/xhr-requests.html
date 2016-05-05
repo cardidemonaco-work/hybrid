@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<title>Dynatrace Hybrid App! (our Mobile ADK combined with our JavaScript Agent)</title>
-	<link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+     
+    <title>Dynatrace Hybrid App! (our Mobile ADK combined with our JavaScript Agent)</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
+    
+	<!-- spaceTravel with local JS Agent and cors
+	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=http://spacetravel.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
+	 -->
 	
 	<!-- spaceTravel with local JS Agent and no cors 
 	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|bandwidth=300|reportUrl=http://spacetravel.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
 	-->
-	<!-- int-us-support with local JS Agent and no cors -->
+	
+		<!-- int-us-support with local JS Agent and cors (alternate Web Server: http://prod-win.clients.nasa.cpwr.corp/dynaTraceMonitor) -->
+	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=http://prod-win.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
+	
+	<!-- int-us-support with local JS Agent and cors
+	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|cors=1|bandwidth=300|reportUrl=https://int-us-support.compuwareapmaas.com/dynaTraceMonitor"></script> -->
+	
+	<!-- int-us-support with local JS Agent and no cors
 	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|bandwidth=300|reportUrl=https://int-us-support.compuwareapmaas.com/dynaTraceMonitor"></script>
-	
-	
-	<!-- int-us-support with local JS Agent and cors (alternate Web Server: http://prod-win.clients.nasa.cpwr.corp/dynaTraceMonitor)
-	<script type="text/javascript" src="javascript/dtagent630_23aprx_1305.js" data-dtconfig="tp=500,50,0|bandwidth=300|reportUrl=http://prod-win.clients.nasa.cpwr.corp/dynaTraceMonitor"></script>
 	 -->
+	 
 	<!-- <script src='http://cd-dt-0602-win.clients.nasa.cpwr.corp/dtagent_bootstrap.js?app=Dynatrace+Hybrid+App'></script>
 	-->
-	
-	</head>
+	 
+</head>
 
 <body>
 <script>
@@ -41,10 +50,10 @@ xhr5.send(null);
 
 </script>
 
-	<div id="menu_bg">
-		<div id="menu">
-			<h1>Dynatrace Hybrid App</h1>
-			
+
+    <div id="menu_bg">
+        	<div id="menu">
+				<h1>Dynatrace Hybrid App</h1>
 			<ol>
 			<!-- GET THIS WORKING: #include file="menu.txt" -->
 				<li><a href="index.html">Home Page (index.html)</a></li><br />
@@ -56,14 +65,9 @@ xhr5.send(null);
 				<li><a href="js-bootstrap.html">JavaScript Bootstrap Agent usage (js-bootstrap.html)</a></li><br />
 				<li><a href="xhrAction.html">Create XHR Action (xhrAction.html)</a></li><br />
 			</ol>
-		</div>
-	</div>
-
-	<!-- This is where the Map actually shows (for some reason cannot be in the <form> tag) -->
-	<!-- <div id="map_canvas"> </div> -->
-	<br/><br/><br/><br/><br/><br/><br/><br/>
-	<div>
-	<iframe src="https://www.google.com/maps/d/embed?mid=zUtCsVPGhxj8.kIuwmcjaqxpI" width="100%" height="500px" ></iframe>
-	</div>
-</body>
+        	</div>
+        </div>
+		
+    
+	</body>
 </html>

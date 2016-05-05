@@ -1,6 +1,6 @@
 // 
 //  CompuwareUEM.js
-//  Version: 6.1.0.7971
+//  Version: 6.3.0.1305
 //
 //
 // These materials contain confidential information and
@@ -746,6 +746,34 @@ function CompuwareUEM()
         {
             return rc;
         }
+    }
+
+    CompuwareUEM.prototype.getCookieForAction = function(actionId)
+    {
+    	// get a cookie for the specific actionId
+    	
+    	var rc = 1;
+    	
+    	try
+    	{
+    		if (isAndroid())
+    		{
+    			rc = CpwrUemAndroidADK.getCookieForAction(actionId);
+    		}
+    		else 
+    		{
+    			rc = CpwrUemiOSADK.getCookieForAction("TODO");
+    		}
+    		checkRC("getCookieForAction", rc);
+    	}
+    	catch (e)
+    	{
+    		errorMsg(e);
+    	}
+    	finally
+    	{
+    		return rc;
+    	}
     }
 
     CompuwareUEM.prototype.tagXmlHttpRequest = function(xmlHttpReq, actionId)
